@@ -18,6 +18,14 @@ use Illuminate\Support\Arr;
 class AuthUserProvider implements UserProvider
 {
     /**
+     * WordPress owns password hashes; Laravel must not replace them on login.
+     */
+    public function rehashPasswordIfRequired(Authenticatable $user, array $credentials, bool $force = false)
+    {
+        // Intentionally leave password upgrades to WordPress authentication.
+    }
+
+    /**
      * @var array
      */
     protected $config = [];

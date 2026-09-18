@@ -138,6 +138,11 @@ class User extends Model implements Authenticatable, CanResetPassword
         return $this->user_pass;
     }
 
+    public function getAuthPasswordName()
+    {
+        return 'user_pass';
+    }
+
     /**
      * Get the token value for the "remember me" session.
      *

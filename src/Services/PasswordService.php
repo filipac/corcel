@@ -13,6 +13,8 @@ use Hautelook\Phpass\PasswordHash;
  */
 class PasswordService
 {
+    protected PasswordHash $hasher;
+
     public function __construct()
     {
         $this->hasher = new PasswordHash(8, true);
